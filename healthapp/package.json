@@ -11,7 +11,8 @@
     "calculateBmi": "tsc && node bmiCalculator.ts",
     "exerciseCalculator": "tsc && node exerciseCalculator.ts",
     "start": "tsc && node index.js",
-    "dev": "tsc && node index.js"
+    "dev": "tsc && node index.js",
+    "lint": "eslint ."
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
