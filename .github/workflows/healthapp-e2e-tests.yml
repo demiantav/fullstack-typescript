@@ -36,12 +36,12 @@ jobs:
         working-directory: ./healthapp-tests
         run: npm install
 
-      - - name: Install Playwright browsers
-          working-directory: ./healthapp-tests
-          timeout-minutes: 3
-          run: |
-            export DEBIAN_FRONTEND=noninteractive
-            npx playwright install chromium
+      - name: Install Playwright browsers
+        working-directory: ./healthapp-tests
+        timeout-minutes: 3
+        run: |
+          export DEBIAN_FRONTEND=noninteractive
+          npx playwright install chromium
 
       - name: Run e2e tests
         working-directory: ./healthapp-tests
