@@ -42,6 +42,7 @@ jobs:
 
       - name: Run e2e tests
         working-directory: ./healthapp-tests
+        timeout-minutes: 5
         run: npm test
 
       - name: Upload test report
