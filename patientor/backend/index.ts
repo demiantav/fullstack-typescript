@@ -1,6 +1,7 @@
 import express from 'express';
 import cors from 'cors';
 import diagnosisRouter from './routes/diagnosis.ts';
+import patientsRouter from './routes/patients.ts';
 
 const app = express();
 // eslint-disable-next-line @typescript-eslint/no-unsafe-call
@@ -14,6 +15,7 @@ app.get('/api/ping', (_req, res) => {
 });
 
 app.use('/api/diagnoses', diagnosisRouter);
+app.use('/api/patients', patientsRouter);
 
 const PORT = 3001;
 
