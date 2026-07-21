@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-unsafe-argument */
 import express, { type Response } from 'express';
 import service from '../services/diagnosiService.ts';
+import { parseObject } from '../utils/utils.ts';
 
 const router = express.Router();
 
@@ -10,7 +11,7 @@ router.get('/', (_req, res: Response) => {
 
 router.post('/', (req, res) => {
   try {
-    const newPatient = service.addPatient(req.body);
+    const newPatient = service.addPatient(parseObject(req.body));
     res.json(newPatient);
   } catch (error: unknown) {
     let errorMessage = 'Something went wrong.';
